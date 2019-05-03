@@ -1,0 +1,164 @@
+---
+title: "Binomial Distribution"
+author: "Chengcheng Feng"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Introduction to binomial distribution}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, echo = FALSE, message = FALSE}
+knitr::opts_chunk$set(collapse = T, comment = "#>")
+library(binomial)
+```
+
+## Binomial Distribution
+
+The package `"binomial"` is created to implement functions for calculating probabilities of a Binomial random variable, and related calculations such as the
+probability distribution, the expected value, variance, etc.
+
+
+## Calculate the combinations of successes in trials
+
+The function `bin_choose()` is used to calculate the number of combinations in which k successes can occur in n trials.
+
+```{r}
+choose_successes <- bin_choose(n = 5,k = 2)
+choose_successes
+```
+
+There are two arguments: `n` and `k`. `n` means the number of trials and `k` represents the number of successes. Here `n` should be not less than `k`.
+
+
+## Calculate the probability of successes in trials
+
+The function `bin_probability()` is used to calculate the probability of successes in multiple trials.
+
+```{r}
+probability_successes <- bin_probability(success = 2, trials = 5, prob = 0.5)
+probability_successes
+```
+
+There are three arguments: `success`, `trials` and `prob`. `success` means the number of successes, `trials` represents the number of trials, and `prob` is the probability of success on each trial.
+
+
+## Show a data frame with the probability distribution
+
+The function `bin_distribution()` is created to show a data frame with the probability distribution.
+
+```{r}
+dis1 <- bin_distribution(trials =5, prob = 0.5)
+dis1
+```
+
+There are two arguments: `trials` and `prob`. `trials` represents the number of trials, and `prob` is the probability of success on each trial.
+
+
+### Plot of the binomial probability distribution
+
+You can use the function `plot()` to create a barplot to display the probability histogram of a binomial distribution.
+
+```{r, fig.show='hold'}
+plot(dis1)
+```
+
+
+## Show a data frame with the binomial cumulative distribution
+
+The function `bin_cumulative()` is created to show a data frame with the binomial cumulative distribution.
+
+```{r}
+dis2 <- bin_cumulative(trials =5, prob = 0.5)
+dis2
+```
+
+There are two arguments: `trials` and `prob`. `trials` represents the number of trials, and `prob` is the probability of success on each trial.
+
+
+### Plot of the binomial cumulative distribution
+
+You can use the function `plot()` to graph the binomial cumulative distribution.
+
+```{r, fig.show='hold'}
+plot(dis2)
+```
+
+
+## Show a list of trials and probability
+
+The function `bin_variable()` is created to show a list with named elements `trials` and `prob`.
+
+```{r}
+bin1 <- bin_variable(trials =5, prob = 0.5)
+bin1
+```
+
+There are two arguments: `trials` and `prob`. `trials` represents the number of trials, and `prob` is the probability of success on each trial.
+
+The `summary()` function not only gives you a nice list of parameters trials and prob, but it also shows the mean, variance, mode, skewness and kurtosis.
+
+```{r}
+summary(bin1)
+```
+
+
+## Calculate the mean of a binomial distribution
+
+The function `bin_mean()` is created to calculate the mean of a binomial distribution.
+
+```{r}
+me <- bin_mean(trials =5, prob = 0.5)
+me
+```
+
+There are two arguments: `trials` and `prob`. `trials` represents the number of trials, and `prob` is the probability of success on each trial.
+
+
+## Calculate the variance of a binomial distribution: bin_variance()
+
+The function bin_variance() is created to calculate the variance of a binomial distribution.
+
+```{r}
+v <- bin_variance(trials =5, prob = 0.5)
+v
+```
+
+There are two arguments: `trials` and `prob`. `trials` represents the number of trials, and `prob` is the probability of success on each trial.
+
+
+## Calculate the mode of a binomial distribution: bin_mode()
+
+The function bin_mode() is created to calculate the mode of a binomial distribution.
+
+```{r}
+mo <- bin_mode(trials =5, prob = 0.5)
+mo
+```
+
+There are two arguments: `trials` and `prob`. `trials` represents the number of trials, and `prob` is the probability of success on each trial.
+
+
+## Calculate the skewness of a binomial distribution: bin_skewness()
+
+The function bin_skewness() is created to calculate the skewness of a binomial distribution.
+
+```{r}
+s <- bin_skewness(trials =5, prob = 0.5)
+s
+```
+
+There are two arguments: `trials` and `prob`. `trials` represents the number of trials, and `prob` is the probability of success on each trial.
+
+
+## Calculate the kurtosis of a binomial distribution: bin_kurtosis()
+
+The function bin_kurtosis() is created to calculate the kurtosis of a binomial distribution.
+
+```{r}
+k <- bin_kurtosis(trials =5, prob = 0.5)
+k
+```
+
+There are two arguments: `trials` and `prob`. `trials` represents the number of trials, and `prob` is the probability of success on each trial.

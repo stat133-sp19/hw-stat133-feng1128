@@ -2,7 +2,7 @@ Package: binomial
 Type: Package
 Title: Apply the Binomial Distribution
 Version: 0.1.0
-Author: ChengchengFeng
+Author: Chengcheng Feng
 Maintainer: Chengcheng Feng <kelly0716@berkeley.edu>
 Description: Functions for calculating probabilities of a binomial random variable, 
     and related calculations such as the probability distribution, the expected value, variance, etc.
